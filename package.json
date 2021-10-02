@@ -1,0 +1,46 @@
+{
+  "name": "be-panic-app-front-end",
+  "version": "1.0.0",
+  "description": "front-end-of-panic-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawn-ng/Be-Panic-App-Front-End.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "panic",
+    "buying",
+    "app"
+  ],
+  "author": "Clement Seconde-Kynnersley Lillian Monza Heng Ng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawn-ng/Be-Panic-App-Front-End/issues"
+  },
+  "homepage": "https://github.com/shawn-ng/Be-Panic-App-Front-End#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "sass": "^1.42.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
+    "dotenv-webpack": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.56.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  }
+}
