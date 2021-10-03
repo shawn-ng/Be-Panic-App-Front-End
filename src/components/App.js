@@ -1,7 +1,16 @@
-import React from 'react';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Home from './Home.js'
 
-function App() {
-  return <h1>🚨😱 PANIC!!!! 🙀⏰</h1>;
-}
+import '../styles/styles.scss'
 
-export default App;
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      {/* <Route path="/all" component={AllProducts} /> */}
+    </Switch>
+  </BrowserRouter>
+)
+
+export default App
