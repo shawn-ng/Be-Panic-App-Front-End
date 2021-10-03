@@ -4,7 +4,9 @@
   "description": "front-end-of-panic-app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --env NODE_ENV=production",
+    "start:client": "webpack-dev-server --mode=development --env NODE_ENV=local"
   },
   "repository": {
     "type": "git",

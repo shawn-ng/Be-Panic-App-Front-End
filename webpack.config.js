@@ -1,11 +1,11 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 const env =
   process.env.NODE_ENV === 'production'
     ? new webpack.EnvironmentPlugin({ ...process.env })
-    : new Dotenv();
+    : new Dotenv()
 
 module.exports = (webpackEnv) => {
   const publicPath =
@@ -13,7 +13,7 @@ module.exports = (webpackEnv) => {
       ? {
           publicPath: '/',
         }
-      : {};
+      : {}
   return {
     entry: './src/index.js',
     output: {
@@ -33,12 +33,9 @@ module.exports = (webpackEnv) => {
       ],
     },
     devServer: {
-      publicPath: '/',
-      contentBase: path.resolve('src'),
       hot: true,
       open: true,
       port: 8001,
-      watchContentBase: true,
       historyApiFallback: true,
       proxy: {
         // ! This tells webpack about express. Any requests to we prefix with /api will get redirected to express!
@@ -60,5 +57,5 @@ module.exports = (webpackEnv) => {
       }),
       env,
     ],
-  };
-};
+  }
+}
