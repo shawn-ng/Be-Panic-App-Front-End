@@ -3,6 +3,8 @@ import axios from 'axios' // remove axios when hosting and replace with request
 
 // build out api endpoints + routes like in cheeseboard
 
+const baseUrl = 'http://localhost:8001/'
+
 export const getAllProducts = async () => {
   const options = { method: 'GET', url: `/api/product` }
 
@@ -25,4 +27,12 @@ export const getProduct = async (id) => {
 
   const { data } = await axios.request(options)
   return data
+}
+
+export const registerUser = (formData) => {
+  return axios.post(`${baseUrl}/register`, formData)
+}
+
+export const loginUser = (formData) => {
+  return axios.post(`${baseUrl}/login`, formData)
 }

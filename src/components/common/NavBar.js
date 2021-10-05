@@ -18,6 +18,9 @@ const NavBar = () => {
           <Link to="/login" className="navbar-item">
             Login
           </Link>
+          <Link to="/basket" className="navbar-item">
+            🧺 Basket
+          </Link>
         </div>
       </div>
     </nav>

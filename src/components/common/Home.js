@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getAllProducts } from '../../api/product'
+import { getAllProducts } from '../../api/api'
 import ProductCard from '../../products/ProductCard'
 
 const Home = () => {
