@@ -1,15 +1,17 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Home from './Home.js'
+import NavBar from './common/NavBar.js'
 
 import '../styles/styles.scss'
+const Home = React.lazy(() => import('../components/common/Home'))
 
 const App = () => (
   <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      {/* <Route path="/all" component={AllProducts} /> */}
-    </Switch>
+    <NavBar>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </NavBar>
   </BrowserRouter>
 )
 
