@@ -12,6 +12,12 @@ export const getAllProducts = async () => {
   return data
 }
 
+export const getSingleProduct = async (id) => {
+  const data = await axios.get(`/api/product/${id}`)
+
+  return data
+}
+
 export const createProducts = async (newProduct) => {
   const options = {
     method: 'POST',
@@ -22,11 +28,31 @@ export const createProducts = async (newProduct) => {
   return data
 }
 
-export const getProduct = async (id) => {
-  const options = { method: 'GET', url: `/api/product/${id}` }
+// export const getProduct = async (id) => {
+//   const options = { method: 'GET', url: `/api/product/${id}` }
 
-  const { data } = await axios.request(options)
-  return data
+//   const { data } = await axios.request(options)
+//   return data
+// }
+
+export const editProduct = (id, formData) => {
+  // add in admin access here and token, will need to update with secureRoute + admin check
+  //   const requestConfig = {
+  //     headers: { Authorization: `Bearer ${getToken()}` },
+  //   }
+
+  //   add request config here
+  //   return axios.put(`${baseUrl}/product/${id}`, formData, requestConfig)
+  return axios.put(`${baseUrl}/product/${id}`, formData, requestConfig)
+}
+
+export const deleteProduct = (id) => {
+  // add in admin access here and token, will need to update with secureRoute + admin check
+  //   const requestConfig = {
+  //     headers: { Authorization: `Bearer ${getToken()}` },
+  //   }
+
+  return axios.delete(`${baseUrl}product/${id}`) // add requestConfig here
 }
 
 export const registerUser = (formData) => {
