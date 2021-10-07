@@ -19,10 +19,12 @@ const Home = () => {
             return (
               <ProductCard
                 key={product._id}
+                category={product.category}
+                imageUrl={product.image.url}
+                stockCount={product.stockCount}
                 brand={product.brand}
                 price={product.price}
-                name={product.name}
-                imageUrl={product.image.url}
+                _id={product._id}
               />
             )
           })}
