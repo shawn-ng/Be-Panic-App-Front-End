@@ -43,51 +43,53 @@ const ShowProduct = () => {
   return (
     <>
       {state.product ? (
-        <section>
-          <div>
-            <h2>{state.product.name}</h2>
+        <section className="section">
+          <div className="container">
+            <h2 className="title has-text-centered">{state.product.name}</h2>
             <hr />
+            <div className="column is-half">
+              <figure className="image">
+                <img src={state.product.image.url} alt="product" />
+              </figure>
+            </div>
 
-            <div>
-              <div>
-                <h4>
+            <div className="columns">
+              <div className="column is-half">
+                <h4 className="title is-4">
                   <span>Name</span>
                 </h4>
                 <hr />
                 <p>{state.product.name}</p>
                 <hr />
-                <h4>
+                <h4 className="title is-4">
                   <span>Brand</span>
                   <hr />
                 </h4>
                 <p>{state.product.brand}</p>
                 <hr />
-                <h4>
+                <h4 className="title is-4">
                   <span>Info</span>
                   <hr />
                 </h4>
                 <p>{state.product.productInfo}</p>
                 <hr />
-                <h4>
+                <h4 title="title is-4">
                   <span>Description</span>
                   <hr />
                 </h4>
                 <p>{state.product.itemDescription}</p>
                 <hr />
-                <h4>
+                <h4 className="title is-4">
                   <span>Image</span>
                   <hr />
                 </h4>
-                <figure>
-                  <img src={state.product.image.url} alt="product" />
-                </figure>
-                <hr />
                 <Link to={`/product/${id}/edit`} className="button is-info">
                   Edit Product
                 </Link>
                 <button className="button is-info" onClick={handleDelete}>
                   Delete product
                 </button>
+                <hr />
               </div>
             </div>
           </div>
