@@ -1,7 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router'
+
+import { removeToken } from '../../api/Auth.js'
 
 const NavBar = () => {
+  const location = useLocation()
+
+  const handleClick = () => {
+    removeToken()
+  }
+
   return (
     <nav className="navbar is dark">
       <div className="container">
@@ -12,15 +21,30 @@ const NavBar = () => {
           <Link to="/products" className="navbar-item">
             Products
           </Link>
-          <Link to="/register" className="navbar-item">
-            Register
-          </Link>
-          <Link to="/login" className="navbar-item">
-            Login
-          </Link>
           <Link to="/basket" className="navbar-item">
             🧺 Basket
           </Link>
+
+          {window.localStorage.token ? (
+            <Link
+              to={{
+                pathname: '/login',
+              }}
+              className="navbar-item"
+              onClick={handleClick}
+            >
+              LogOut
+            </Link>
+          ) : (
+            <>
+              <Link to="/register" className="navbar-item">
+                Register
+              </Link>
+              <Link to="/login" className="navbar-item">
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

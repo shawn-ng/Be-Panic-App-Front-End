@@ -1,9 +1,10 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { loginUser } from '../api/Api'
-import { setToken } from '../api/Auth'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 
-const Login = ({ callback }) => {
+import { loginUser } from '../api/Api'
+import { setToken, removeToken } from '../api/Auth'
+
+const Login = () => {
   const history = useHistory()
   const [state, setState] = React.useState({
     formData: {
@@ -11,6 +12,7 @@ const Login = ({ callback }) => {
       password: '',
     },
   })
+  const [invalid, setInvalid] = React.useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -19,20 +21,21 @@ const Login = ({ callback }) => {
       const res = await loginUser(state.formData)
       if (res.status === 200) {
         setToken(res.data.token)
-        callback()
+
         history.push('/products')
       }
     } catch (err) {
+      setInvalid(true)
       console.error('error in logging in the user', err)
     }
   }
 
   const handleChange = (e) => {
-    const formData = {
+    const newformData = {
       ...state.formData,
       [e.target.name]: e.target.value,
     }
-    setState({ formData })
+    setState({ formData: newformData })
   }
 
   return (
@@ -43,7 +46,7 @@ const Login = ({ callback }) => {
             onSubmit={handleSubmit}
             className="column is-half is-offset-one-quarter"
           >
-            <div>
+            <div className="mt-4">
               <label className="label">Email</label>
               <div className="control">
                 <input
@@ -56,7 +59,7 @@ const Login = ({ callback }) => {
               </div>
             </div>
 
-            <div>
+            <div className="mt-4">
               <label className="label">Password</label>
               <div className="control">
                 <input
@@ -70,12 +73,19 @@ const Login = ({ callback }) => {
               </div>
             </div>
 
-            <div>
+            <div className="mt-4">
               <input
                 type="submit"
                 value="Login"
                 className="button is-fullwidth is-danger"
               />
+            </div>
+            {invalid ? <p>Invalid password or email. Try again.</p> : null}
+            <div className="mt-4">
+              <p>
+                Don't have an account? Register
+                <Link to="/register"> here.</Link>
+              </p>
             </div>
           </form>
         </div>

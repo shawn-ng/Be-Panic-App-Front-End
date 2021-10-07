@@ -1,6 +1,6 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { registerUser } from '../api/Api'
+import { Link, useHistory } from 'react-router-dom'
+import { registerUser } from '../api/Api.js'
 
 const Register = () => {
   const history = useHistory()
@@ -12,26 +12,41 @@ const Register = () => {
       passwordConfirmation: '',
     },
   })
+  // this state tells you whether the password and confirmedPassword matched
+  const [passwordMatch, setPasswordMatch] = React.useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     try {
-      const res = await registerUser(state.formData)
-      if (res.status === 200) {
-        history.push('login')
+      if (state.formData.password !== state.formData.passwordConfirmation) {
+        // temporarily
+        return setPasswordMatch(true)
+      }
+
+      setPasswordMatch(false)
+      // this is the required format for the API end points
+      const res = await registerUser({
+        username: state.formData.username,
+        email: state.formData.email,
+        password: state.formData.password,
+      })
+
+      // 201 -> data created
+      if (res.status === 201) {
+        history.push('/login')
       }
     } catch (err) {
-      console.log('Error registering the user', err)
+      console.log('Error registering the user: ', err)
     }
   }
 
   const handleChange = (e) => {
-    const formData = {
+    const newformData = {
       ...state.formData,
       [e.target.name]: e.target.value,
     }
-    setState({ formData })
+    setState({ formData: newformData })
   }
 
   return (
@@ -102,6 +117,14 @@ const Register = () => {
                 type="submit"
                 value="Register"
               />
+            </div>
+            {passwordMatch ? (
+              <p className="dangerous">Password is invalid! Try again.</p>
+            ) : null}
+            <div className="mt-4">
+              <p>
+                Have an account? Login <Link to="/login">here.</Link>
+              </p>
             </div>
           </form>
         </div>

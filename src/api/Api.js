@@ -30,9 +30,9 @@ export const getProduct = async (id) => {
 }
 
 export const registerUser = (formData) => {
-  return axios.post(`${baseUrl}/register`, formData)
+  return axios.post(`/api/register`, formData)
 }
 
 export const loginUser = (formData) => {
-  return axios.post(`${baseUrl}/login`, formData)
+  return axios.post(`/api/login`, formData)
 }

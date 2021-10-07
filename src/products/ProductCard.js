@@ -10,15 +10,15 @@ const ProductCard = ({
   stockCount,
   itemDescription,
 }) => {
-  console.log({
-    _id,
-    name,
-    brand,
-    imageUrl,
-    price,
-    stockCount,
-    itemDescription,
-  })
+  // console.log({
+  //   _id,
+  //   name,
+  //   brand,
+  //   imageUrl,
+  //   price,
+  //   stockCount,
+  //   itemDescription,
+  // })
 
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
