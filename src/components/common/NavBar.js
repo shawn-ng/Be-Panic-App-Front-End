@@ -21,8 +21,8 @@ const NavBar = () => {
           <Link to="/products" className="navbar-item">
             Products
           </Link>
-          <Link to="/basket" className="navbar-item">
-            🧺 Basket
+          <Link to="/search" className="navbar-item">
+            Search
           </Link>
 
           {window.localStorage.token ? (
@@ -42,6 +42,9 @@ const NavBar = () => {
               </Link>
               <Link to="/login" className="navbar-item">
                 Login
+              </Link>
+              <Link to="/basket" className="navbar-item">
+                🧺 Basket
               </Link>
             </>
           )}

@@ -18,6 +18,16 @@ export const getSingleProduct = async (id) => {
   return data
 }
 
+export const searchProducts = async (query) => {
+  const options = {
+    method: 'GET',
+    url: `/api/search`,
+    params: {
+      q: query,
+    },
+  }
+}
+
 export const createProducts = async (newProduct) => {
   const options = {
     method: 'POST',
