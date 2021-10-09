@@ -1,24 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import Products from './Products'
+import React, { useState } from 'react'
 import { searchProducts } from '../../api/Api'
+import ProductCard from '../../products/ProductCard'
 
 const Search = () => {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState()
   const [q, setQ] = useState('')
-  const [availableCategory, setAvailableCategory] = useState([])
-  const [visibleCategory, setVisibleCategory] = useState(null)
 
-  const search = function (event) {
+  const search = async function (event) {
     event.preventDefault()
-    searchProducts(q).then((products) => setProducts(products))
-  }
+    const item = await searchProducts(q)
 
-  useEffect(() => {
-    const categories = products
-      .map((p) => p.categories)
-      .filter((c) => c !== null)
-    setAvailableCategory([...new Set(products)])
-  }, [products])
+    setProducts(item)
+  }
 
   return (
     <>
@@ -33,24 +26,18 @@ const Search = () => {
         <input type="submit" value="Search" />
       </form>
       <div>
-        {availableCategory.map((category) => (
-          <button onClick={() => setAvailableCategory(category)}>
-            {category}
-          </button>
-        ))}
-        <button onClick={() => setVisibleCategory(null)}>Reset</button>
+        {products ? (
+          products.map((product) => (
+            <ProductCard
+              key={product._id}
+              {...product}
+              imageUrl={product.image.url}
+            />
+          ))
+        ) : (
+          <p>Make a search</p>
+        )}
       </div>
-      {/* add image to make it nice */}
-      <section>
-        <h2>All Products</h2>
-        <div>
-          {products
-            .filter((p) => !visibleCategory || p.categories === visibleCategory)
-            .map((product) => (
-              <Products key={product._id} {...product} />
-            ))}
-        </div>
-      </section>
     </>
   )
 }
