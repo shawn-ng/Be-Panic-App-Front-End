@@ -15,7 +15,7 @@ const Search = () => {
 
   return (
     <>
-      <h1>Products</h1>
+      <h1>Search</h1>
       <form onSubmit={search}>
         <input
           type="search"
