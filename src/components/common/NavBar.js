@@ -21,10 +21,6 @@ const NavBar = () => {
           <Link to="/products" className="navbar-item">
             Products
           </Link>
-          <Link to="/search" className="navbar-item">
-            Search
-          </Link>
-
           {window.localStorage.token ? (
             <Link
               to={{
