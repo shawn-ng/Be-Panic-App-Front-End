@@ -23,6 +23,7 @@ const Login = () => {
         setToken(res.data.token)
 
         history.push('/products')
+        window.location.reload()
       }
     } catch (err) {
       setInvalid(true)

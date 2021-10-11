@@ -10,6 +10,7 @@ const Register = () => {
       email: '',
       password: '',
       passwordConfirmation: '',
+      role: 'basic',
     },
   })
   // this state tells you whether the password and confirmedPassword matched
@@ -30,6 +31,7 @@ const Register = () => {
         username: state.formData.username,
         email: state.formData.email,
         password: state.formData.password,
+        role: state.formData.role,
       })
 
       // 201 -> data created
@@ -108,6 +110,22 @@ const Register = () => {
                   value={state.formData.passwordConfirmation}
                   onChange={handleChange}
                 />
+              </div>
+            </div>
+
+            <div className="field">
+              <label className="label">Purpose</label>
+              <div className="control">
+                <div className="select is-fullwidth">
+                  <select onChange={handleChange} name="role">
+                    <option className="basic" value="basic">
+                      Start shopping
+                    </option>
+                    <option className="admin" value="admin">
+                      Start a business
+                    </option>
+                  </select>
+                </div>
               </div>
             </div>
 

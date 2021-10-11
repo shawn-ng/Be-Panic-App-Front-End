@@ -27,12 +27,12 @@ export const getPayload = () => {
   const jwtParsed = JSON.parse(jwt)
 
   // just to see what these are
-  console.log({
-    token,
-    parts,
-    jwt,
-    jwtParsed,
-  })
+  // console.log({
+  //   token,
+  //   parts,
+  //   jwt,
+  //   jwtParsed,
+  // })
 
   return jwtParsed
 }
