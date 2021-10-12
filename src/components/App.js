@@ -1,6 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
-
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import NavBar from './common/NavBar.js'
+import Home from './common/Home.js'
+import Products from './common/Products.js'
+import ShowProduct from './common/ShowProduct.js'
+import Basket from './common/Basket.js'
 import Register from '../auth/Register.js'
 import Login from '../auth/Login.js'
 import SuperAdminView from '../adminConsole/superAdmin/superAdminView.js'
@@ -14,23 +18,19 @@ import SingleItem from './SingleItem/SingleItem.js'
 
 function App({ current }) {
   return (
-    <Router>
-      <div className="app">
-        <Navbar />
-        <Switch>
-          <Router exact path="/" component={Products} />
-          <Router exact path="/basket" component={Basket} />
-          {!current ? (
-            <Redirect to="/" />
-          ) : (
-            <Router exact path="/products:id" component={SingleItem} />
-          )}
-          <Router path="/register" component={Register} />
-          <Router path="/login" component={Login} />
-          <Router path="/superAdmin" component={SuperAdminView} />
-        </Switch>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/products" component={Products} />
+        <Route path="/product/:id" component={ShowProduct} />
+        <Route path="/basket" component={Basket} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+        <Route path="/superAdmin" component={SuperAdminView} />
+        <Route path="/admin" component={AdminView} />
+      </Switch>
+    </BrowserRouter>
   )
 }
 

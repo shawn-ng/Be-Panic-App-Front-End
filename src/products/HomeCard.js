@@ -27,16 +27,15 @@ const HomeCard = ({
       <Link to={`/product/${_id}`}>
         <div className="card">
           <div className="card-header">
-            <h4 className="card-header-title">{name}</h4>
+            <h4>{name}</h4>
+            <div className="card-content">
+              <h5>{category}</h5>
+              <h5>{brand}</h5>
+              <h5>{price}</h5>
+              <h5>{stockCount} Left</h5>
+              {/* <h5>{_id}</h5> */}
+            </div>
           </div>
-        </div>
-
-        <div className="card-content">
-          <h5>{category}</h5>
-          <h5>{brand}</h5>
-          <h5>{price}</h5>
-          <h5>{stockCount} Left</h5>
-          {/* <h5>{_id}</h5> */}
         </div>
       </Link>
     </div>
