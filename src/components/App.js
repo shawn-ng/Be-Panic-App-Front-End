@@ -8,13 +8,15 @@ import Basket from './common/Basket.js'
 import Register from '../auth/Register.js'
 import Login from '../auth/Login.js'
 import SuperAdminView from '../adminConsole/superAdmin/superAdminView.js'
+import AdminView from '../adminConsole/admin/adminView.js'
 
+import '../styles/style.scss'
 import { connect } from 'react-redux'
 
-import Navbar from './navbar/Navbar.js'
-import Products from './products/Products.js'
-import Basket from './basket/Basket.js'
-import SingleItem from './SingleItem/SingleItem.js'
+// import Navbar from './navbar/Navbar.js'
+// import Products from './products/Products.js'
+// import Basket from './basket/Basket.js'
+// import SingleItem from './SingleItem/SingleItem.js'
 
 function App({ current }) {
   return (
