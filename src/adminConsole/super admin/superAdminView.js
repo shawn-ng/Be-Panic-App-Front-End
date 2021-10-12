@@ -43,46 +43,48 @@ const SuperAdminView = () => {
 
   return (
     <>
-      <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-        <thead>
-          <tr>
-            <th>
-              <p className="has-text-centered">Username</p>
-            </th>
-            <th>
-              <p className="has-text-centered">Role</p>
-            </th>
-            <th>
-              <p className="has-text-centered">Action</p>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {userData
-            ? userData.map((user) => {
-                return (
-                  <tr key={user._id}>
-                    <td>
-                      <p className="has-text-centered">{user.username}</p>
-                    </td>
-                    <td>
-                      <p className="has-text-centered"> {user.role}</p>
-                    </td>
-                    <td>
-                      <button
-                        className="button is-fullwidth"
-                        onClick={handleClick}
-                        name={user._id}
-                      >
-                        Take Action
-                      </button>
-                    </td>
-                  </tr>
-                )
-              })
-            : null}
-        </tbody>
-      </table>
+      <div className="section">
+        <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>
+                <p className="has-text-centered">Username</p>
+              </th>
+              <th>
+                <p className="has-text-centered">Role</p>
+              </th>
+              <th>
+                <p className="has-text-centered">Action</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData
+              ? userData.map((user) => {
+                  return (
+                    <tr key={user._id}>
+                      <td>
+                        <p className="has-text-centered">{user.username}</p>
+                      </td>
+                      <td>
+                        <p className="has-text-centered"> {user.role}</p>
+                      </td>
+                      <td>
+                        <button
+                          className="button is-fullwidth"
+                          onClick={handleClick}
+                          name={user._id}
+                        >
+                          Take Action
+                        </button>
+                      </td>
+                    </tr>
+                  )
+                })
+              : null}
+          </tbody>
+        </table>
+      </div>
       <div className={`modal ${popUpModal}`}>
         <div className="modal-background" onClick={handleClick}></div>
         <div className="modal-content">
@@ -125,7 +127,7 @@ const SuperAdminView = () => {
             </table>
             <div>
               <button className="button  is-rounded" onClick={handleBlock}>
-                Block
+                Remove
               </button>
             </div>
           </section>
