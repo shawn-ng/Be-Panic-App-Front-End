@@ -1,0 +1,74 @@
+.basketItem {
+  margin-bottom: 1rem;
+  display: flex;
+  box-shadow: 0 2px 8px #000;
+  border-radius: 10px;
+}
+
+.basketItem_image {
+  width: 350px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.basketItem_details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #505050;
+}
+
+.details_title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.details_desc {
+  font-size: 0.8rem;
+}
+
+.details_price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.basketItem_actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.6rem;
+}
+
+.basketItem_qty {
+  display: flex;
+  align-items: center;
+}
+
+.basketItem_qty input {
+  padding: 10px;
+  margin-left: 0.4rem;
+  width: 60px;
+  border-radius: 10px;
+  border: 1px solid #505050;
+}
+
+.actions_deleteItemButton {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #505050;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all ease-in-out 0.7s;
+  outline: none;
+}
+
+.actions_deleteItemButton:hover {
+  background-color: #da291c;
+}
+
+.actions_deleteItemButton img {
+  width: 25px;
+  height: 25px;
+}

@@ -4,7 +4,7 @@ import { getAdminProduct } from '../../api/AdminAPI'
 const AdminView = () => {
   const [productState, setProductState] = React.useState()
 
-  // fetching the sellet products
+  // fetching the seller products
   const fetchingProduct = async () => {
     try {
       const products = await getAdminProduct()
@@ -35,7 +35,7 @@ const AdminView = () => {
                   <p className="has-text-centered">Product ID</p>
                 </th>
                 <th>
-                  <p className="has-text-centered">Prodcut Name</p>
+                  <p className="has-text-centered">Product Name</p>
                 </th>
                 <th>
                   <p className="has-text-centered">Stock Count</p>

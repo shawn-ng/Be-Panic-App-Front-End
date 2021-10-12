@@ -66,7 +66,7 @@ const SuperAdminView = () => {
                       <p className="has-text-centered">{user.username}</p>
                     </td>
                     <td>
-                      <p className="has-text-centered"> {user.role}</p>
+                      <p className="has-text-centered">{user.role}</p>
                     </td>
                     <td>
                       <button

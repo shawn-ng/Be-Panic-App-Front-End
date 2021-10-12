@@ -1,32 +1,43 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import NavBar from './common/NavBar.js'
-import Home from './common/Home.js'
-import Products from './common/Products.js'
-import ShowProduct from './common/ShowProduct.js'
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
+
 import Register from '../auth/Register.js'
 import Login from '../auth/Login.js'
-import SuperAdminView from '../adminConsole/super admin/superAdminView.js'
+import SuperAdminView from '../adminConsole/superAdmin/superAdminView.js'
 
-import '../styles/styles.scss'
-import AdminView from '../adminConsole/admin/adminView.js'
-// const Home = React.lazy(() => import('./common/Home.js'))
+import { connect } from 'react-redux'
 
-const App = () => {
+import Navbar from './navbar/Navbar.js'
+import Products from './products/Products.js'
+import Basket from './basket/Basket.js'
+import SingleItem from './SingleItem/SingleItem.js'
+
+function App({ current }) {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/products" component={Products} />
-        <Route path="/product/:id" component={ShowProduct} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route path="/superAdmin" component={SuperAdminView} />
-        <Route path="/admin" component={AdminView} />
-      </Switch>
-    </BrowserRouter>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <Switch>
+          <Router exact path="/" component={Products} />
+          <Router exact path="/basket" component={Basket} />
+          {!current ? (
+            <Redirect to="/" />
+          ) : (
+            <Router exact path="/products:id" component={SingleItem} />
+          )}
+          <Router path="/register" component={Register} />
+          <Router path="/login" component={Login} />
+          <Router path="/superAdmin" component={SuperAdminView} />
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    current: state.shop.currentItem,
+  }
+}
+
+export default connect(mapStateToProps)(App)
