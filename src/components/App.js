@@ -4,6 +4,7 @@ import NavBar from './common/NavBar.js'
 import Home from './common/Home.js'
 import Products from './common/Products.js'
 import ShowProduct from './common/ShowProduct.js'
+import Basket from './common/Basket.js'
 import Register from '../auth/Register.js'
 import Login from '../auth/Login.js'
 import SuperAdminView from '../adminConsole/super admin/superAdminView.js'
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route path="/products" component={Products} />
         <Route path="/product/:id" component={ShowProduct} />
+        <Route path="/basket" component={Basket} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/superAdmin" component={SuperAdminView} />
