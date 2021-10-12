@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router'
-
 import { removeToken, getPayload } from '../../api/Auth.js'
+import logo from '../images/logo.jpg'
 
 const NavBar = () => {
   const location = useLocation()
@@ -30,6 +30,7 @@ const NavBar = () => {
       <nav className="navbar-menu is-fullwidth is-dark">
         <div className="container">
           <div className="navbar-brand is-dark">
+            <img src={logo} alt={logo} className="image is-64x64" />
             <Link to="/" className="navbar-item">
               Home
             </Link>
