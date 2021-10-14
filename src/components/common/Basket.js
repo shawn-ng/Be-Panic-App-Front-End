@@ -13,6 +13,7 @@ const Basket = ({ basket }) => {
             return <RemoveItemAtCheckout item={item} key={item.id} />
           })}
         </div>
+        <button>Checkout</button>
       </div>
     </>
   )
