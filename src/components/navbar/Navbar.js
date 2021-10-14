@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
-// Redux imports
-import { connect } from 'react-redux'
-
 const Navbar = ({ basket }) => {
   const [basketCount, setBasketCount] = useState(0)
 
@@ -37,13 +34,7 @@ const Navbar = ({ basket }) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    basket: state.shop.basket,
-  }
-}
-
-export default connect(mapStateToProps)(Navbar)
+export default Navbar
 
 // MVP
 // * Have basket icon top right

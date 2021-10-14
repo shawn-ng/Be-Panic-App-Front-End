@@ -10,18 +10,8 @@ const ProductCard = ({
   stockCount,
   itemDescription,
   category,
+  onItemSelect,
 }) => {
-  console.log({
-    _id,
-    name,
-    brand,
-    imageUrl,
-    price,
-    stockCount,
-    itemDescription,
-    category,
-  })
-
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
       <Link to={`/product/${_id}`}>
@@ -51,6 +41,23 @@ const ProductCard = ({
           {/* <h5>{_id}</h5> */}
         </div>
       </Link>
+      <button
+        onClick={() =>
+          onItemSelect({
+            _id,
+            name,
+            brand,
+            imageUrl,
+            price,
+            stockCount,
+            itemDescription,
+            category,
+            onItemSelect,
+          })
+        }
+      >
+        Buy
+      </button>
     </div>
   )
 }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import RemoveItemAtCheckout from './RemoveItems'
 
-const Basket = () => {
-  const [state, setState] = useState()
+const Basket = ({ basket }) => {
+  const [state, setState] = useState(basket)
+  console.log('basket state is', state)
   return (
     <>
       <div>
         <h1>Basket</h1>
         <div>
-          {this.state.items.map((item) => {
+          {state.map((item) => {
             return <RemoveItemAtCheckout item={item} key={item.id} />
           })}
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getAllProducts } from '../../api/Api'
 import { searchProducts } from '../../api/Api'
-import HomeCard from '../../products/HomeCard'
+import HomeCard from '../products/HomeCard'
 
 const Home = () => {
   const [products, setProducts] = useState([])

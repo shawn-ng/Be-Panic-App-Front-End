@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getAllProducts } from '../../api/Api'
-import ProductCard from '../../products/ProductCard'
+import ProductCard from '../products/ProductCard.js'
 // import Search from './Search'
 
-const Products = () => {
+const Products = ({ onItemSelect }) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const Products = () => {
                 imageUrl={product.image.url}
                 stockCount={product.stockCount}
                 _id={product._id}
+                onItemSelect={onItemSelect}
               />
             )
           })}

@@ -1,10 +1,6 @@
 import React from 'react'
 import styles from './SingleItem.module.css'
 
-// Redux imports
-import { connect } from 'react-redux'
-import { addToBasket } from '../../redux/shopping/shopping-actions.js'
-
 const SingleItem = ({ current, addToBasket }) => {
   return (
     <div className={styles.SingleItem}>
@@ -29,16 +25,4 @@ const SingleItem = ({ current, addToBasket }) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    current: state.shop.currentItem,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addTOBasket: (id) => dispatch(addToBasket(id)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SingleItem)
+export default SingleItem

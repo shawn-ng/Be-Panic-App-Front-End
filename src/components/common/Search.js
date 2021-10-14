@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { searchProducts } from '../../api/Api'
-import ProductCard from '../../products/ProductCard'
+import ProductCard from '../products/ProductCard'
 
 const Search = () => {
   const [products, setProducts] = useState()
