@@ -10,17 +10,6 @@ const BasketCard = ({
   itemDescription,
   category,
 }) => {
-  console.log({
-    _id,
-    name,
-    brand,
-    imageUrl,
-    price,
-    stockCount,
-    itemDescription,
-    category,
-  })
-
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
       {/* <Link to={`/product/${_id}`}> */}

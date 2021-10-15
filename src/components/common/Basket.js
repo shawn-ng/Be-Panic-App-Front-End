@@ -23,12 +23,17 @@ const Basket = ({ basket, onCheckOut }) => {
     if (!window.localStorage.token) {
       history.push('/login')
     } else {
+      let productCount = {}
       state.forEach((product) => {
-        let updatedData = {
-          stockCount: product.stockCount - 1,
+        if (productCount[product._id]) {
+          productCount[product._id].stockCount--
+        } else {
+          productCount[product._id] = { stockCount: product.stockCount - 1 }
         }
-        updatingProductsApi(product._id, updatedData)
-        console.log(product)
+      })
+
+      Object.keys(productCount).forEach((product) => {
+        updatingProductsApi(product, productCount[product])
       })
 
       setState([])
@@ -51,23 +56,27 @@ const Basket = ({ basket, onCheckOut }) => {
       <div>
         <h1 className="title">Basket</h1>
         <div className="columns is-multiline">
-          {state.map((product) => {
-            return (
-              <BasketCard
-                key={product._id}
-                brand={product.brand}
-                price={product.price}
-                name={product.name}
-                // imageUrl={product.image.url}
-                stockCount={product.stockCount}
-                _id={product._id}
-                // onItemSelect={onItemSelect}
-              />
-            )
-          })}
+          {state
+            ? state.map((product) => {
+                return (
+                  <BasketCard
+                    key={`${product._id}_${Math.random() * state.length}`}
+                    brand={product.brand}
+                    price={product.price}
+                    name={product.name}
+                    // imageUrl={product.image.url}
+                    stockCount={product.stockCount}
+                    _id={product._id}
+                    // onItemSelect={onItemSelect}
+                  />
+                )
+              })
+            : null}
         </div>
         <hr />
-        <p>Total: {total ? <p>{total}</p> : null}</p>
+        <div>
+          <p>Total: {total ? <strong>{total}</strong> : null}</p>
+        </div>
         <hr />
         <button className="button" onClick={handleCheckOut}>
           Checkout
