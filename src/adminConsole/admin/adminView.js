@@ -161,12 +161,12 @@ const AdminView = () => {
   return (
     <>
       <div>
-        <div className="section mb-1">
-          <button className="button" onClick={handleAdd}>
-            New Product
-          </button>
-        </div>
         <div className="section mt-1">
+          <div className="mb-4">
+            <button className="button" onClick={handleAdd}>
+              New Product
+            </button>
+          </div>
           <table className="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <thead>
               <tr>
