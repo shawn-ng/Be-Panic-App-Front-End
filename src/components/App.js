@@ -22,6 +22,8 @@ function App({ current }) {
 
   const handleBasketItemSelect = (item) => setBasket([...basket, item])
 
+  const onCheckOut = () => setBasket([])
+
   return (
     <BrowserRouter>
       <NavBar />
@@ -36,7 +38,9 @@ function App({ current }) {
         <Route path="/product/:id" component={ShowProduct} />
         <Route
           path="/basket"
-          component={(props) => <Basket {...props} basket={basket} />}
+          component={(props) => (
+            <Basket {...props} basket={basket} onCheckOut={onCheckOut} />
+          )}
         />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />

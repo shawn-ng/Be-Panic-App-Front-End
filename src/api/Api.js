@@ -37,13 +37,6 @@ export const createProducts = (newProduct) => {
   return axios.post(`/api/product`, newProduct, requestConfig)
 }
 
-// export const getProduct = async (id) => {
-//   const options = { method: 'GET', url: `/api/product/${id}` }
-
-//   const { data } = await axios.request(options)
-//   return data
-// }
-
 export const editProduct = (id, formData) => {
   // add in admin access here and token, will need to update with secureRoute + admin check
   const requestConfig = {
