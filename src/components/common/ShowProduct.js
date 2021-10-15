@@ -43,53 +43,30 @@ const ShowProduct = () => {
   return (
     <>
       {state.product ? (
-        <section className="section">
+        <section className="section has-background-danger-light">
           <div className="container">
             <h2 className="title has-text-centered">{state.product.name}</h2>
             <hr />
-            <div className="column is-half">
-              <figure className="image">
-                <img src={state.product.image.url} alt="product" />
-              </figure>
-            </div>
-
             <div className="columns">
               <div className="column is-half">
-                <h4 className="title is-4">
-                  <span>Name</span>
-                </h4>
-                <hr />
-                <p>{state.product.name}</p>
-                <hr />
-                <h4 className="title is-4">
-                  <span>Brand</span>
+                <figure className="image">
+                  <img src={state.product.image.url} alt="product" />
+                </figure>
+              </div>
+
+              <div className="columns mx-3">
+                <div className="column is-half">
+                  <h4 className="title is-4"></h4>
                   <hr />
-                </h4>
-                <p>{state.product.brand}</p>
-                <hr />
-                <h4 className="title is-4">
-                  <span>Info</span>
+                  <p>{state.product.name}</p>
                   <hr />
-                </h4>
-                <p>{state.product.productInfo}</p>
-                <hr />
-                <h4 title="title is-4">
-                  <span>Description</span>
+                  <p>By {state.product.brand}</p>
                   <hr />
-                </h4>
-                <p>{state.product.itemDescription}</p>
-                <hr />
-                <h4 className="title is-4">
-                  <span>Image</span>
+                  <p>{state.product.productInfo}</p>
                   <hr />
-                </h4>
-                <Link to={`/product/${id}/edit`} className="button is-info">
-                  Edit Product
-                </Link>
-                <button className="button is-info" onClick={handleDelete}>
-                  Delete product
-                </button>
-                <hr />
+                  <p>{state.product.itemDescription}</p>
+                  <hr />
+                </div>
               </div>
             </div>
           </div>

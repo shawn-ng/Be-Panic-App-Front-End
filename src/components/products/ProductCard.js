@@ -16,7 +16,7 @@ const ProductCard = ({
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile is-vcentered">
       <Link to={`/product/${_id}`}>
         <div className="card">
-          <div className="card-header">
+          <div className="card-header has-background-light">
             {/* <h4 className="card-header-title has-text-centered">{name}</h4> */}
             <h4 className="card-header-title">
               {name.length >= 24 ? name.slice(0, 24) + '...' : name}
@@ -34,7 +34,7 @@ const ProductCard = ({
             />
           </figure>
         </div>
-        <div className="notification link-focus-border">
+        <div className="notification link-focus-border has-background-light">
           <h5>£{price}</h5>
 
           <h5>{stockCount} Left In Stock</h5>

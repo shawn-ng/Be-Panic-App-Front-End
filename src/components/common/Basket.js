@@ -48,31 +48,44 @@ const Basket = ({ basket, onCheckOut }) => {
 
   return (
     <>
-      <div>
-        <h1 className="title">Basket</h1>
-        <div className="columns is-multiline">
-          {state.map((product) => {
-            return (
-              <BasketCard
-                key={product._id}
-                brand={product.brand}
-                price={product.price}
-                name={product.name}
-                // imageUrl={product.image.url}
-                stockCount={product.stockCount}
-                _id={product._id}
-                // onItemSelect={onItemSelect}
-              />
-            )
-          })}
+      <section className="hero is-fullheight has-background-black">
+        <div>
+          <h1 className="title mx-5 has-text-danger-dark">Basket</h1>
+          <div className="columns">
+            <div className="column">
+              {state.map((product) => {
+                return (
+                  <BasketCard
+                    key={product._id}
+                    brand={product.brand}
+                    price={product.price}
+                    name={product.name}
+                    // imageUrl={product.image.url}
+                    stockCount={product.stockCount}
+                    _id={product._id}
+                    // onItemSelect={onItemSelect}
+                  />
+                )
+              })}
+            </div>
+          </div>
+          <hr />
+          <div className="column is-offset-9">
+            <p className="has-text-danger-dark">
+              Total: {total ? <p>£{total}</p> : null}
+            </p>
+          </div>
+          <hr />
+          <div className="column is-offset-9">
+            <button
+              className="button is-large is-warning is-rounded is-outlined"
+              onClick={handleCheckOut}
+            >
+              Checkout
+            </button>
+          </div>
         </div>
-        <hr />
-        <p>Total: {total ? <p>{total}</p> : null}</p>
-        <hr />
-        <button className="button" onClick={handleCheckOut}>
-          Checkout
-        </button>
-      </div>
+      </section>
     </>
   )
 }

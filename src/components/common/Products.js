@@ -42,10 +42,10 @@ const Products = ({ onItemSelect }) => {
   console.log(searched)
   return (
     <>
-      <div className="section">
+      <div className="section has-background-black">
         <div className="columns">
           <div className="column is-one-quarter">
-            <h4 className="subtitle">
+            <h4 className="subtitle has-text-danger-dark">
               All your essentials for when disaster strikes
             </h4>
           </div>
@@ -74,7 +74,7 @@ const Products = ({ onItemSelect }) => {
         </div>
       </div>
 
-      <div className="columns is-multiline">
+      <div className="columns is-multiline has-background-black">
         {searched
           ? searched.map((product) => {
               return (
