@@ -71,8 +71,8 @@ const Basket = ({ basket, onCheckOut }) => {
           </div>
           <hr />
           <div className="column is-offset-9">
-            <p className="has-text-warning-dark">
-              Total: {total ? <p>{total}</p> : null}
+            <p className="has-text-danger-dark">
+              Total: {total ? <p>£{total}</p> : null}
             </p>
           </div>
           <hr />

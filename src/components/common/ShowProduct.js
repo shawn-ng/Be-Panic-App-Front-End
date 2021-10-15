@@ -43,7 +43,7 @@ const ShowProduct = () => {
   return (
     <>
       {state.product ? (
-        <section className="section has-background-danger-light">
+        <section className="hero is-fullheight has-background-danger-light">
           <div className="container">
             <h2 className="title has-text-centered">{state.product.name}</h2>
             <hr />
