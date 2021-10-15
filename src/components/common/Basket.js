@@ -39,7 +39,7 @@ const Basket = ({ basket, onCheckOut }) => {
       setState([])
       onCheckOut()
 
-      history.push('/')
+      history.push('/products')
     }
   }
 
