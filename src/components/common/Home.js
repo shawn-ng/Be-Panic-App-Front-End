@@ -59,8 +59,6 @@ const Home = () => {
         <h3>
           <div className="columns is-multiline">
             {products.map((product) => {
-              // ? {product.stockCount < 10} :
-              // return <p>Running Low</p>
               return product.stockCount < 10 ? (
                 <HomeCard
                   key={product._id}

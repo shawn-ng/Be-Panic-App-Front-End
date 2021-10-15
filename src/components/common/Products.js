@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { getAllProducts } from '../../api/Api'
+import { searchProducts } from '../../api/Api'
 import ProductCard from '../products/ProductCard.js'
 // import Search from './Search'
 
 const Products = ({ onItemSelect }) => {
   const [products, setProducts] = useState([])
+  const [q, setQ] = useState('')
+
+  const search = async function (event) {
+    event.preventDefault()
+    const item = await searchProducts(q)
+
+    setProducts(item)
+  }
 
   useEffect(() => {
     getAllProducts().then((products) => setProducts(products))
@@ -12,25 +21,52 @@ const Products = ({ onItemSelect }) => {
 
   return (
     <>
-      <h1>Products</h1>
-      <h3>
-        <div className="columns is-multiline">
-          {products.map((product) => {
-            return (
-              <ProductCard
-                key={product._id}
-                brand={product.brand}
-                price={product.price}
-                name={product.name}
-                imageUrl={product.image.url}
-                stockCount={product.stockCount}
-                _id={product._id}
-                onItemSelect={onItemSelect}
-              />
-            )
-          })}
+      <div className="section">
+        <div className="columns">
+          <div className="column is-one-quarter">
+            <h4 className="subtitle">
+              All your essentials for when disaster strikes
+            </h4>
+          </div>
+          <div className="column is-half">
+            <div className="level-item ">
+              <div className="field has-addons">
+                <form className="level-item" onSubmit={search}>
+                  <p className="control">
+                    <input
+                      className="input"
+                      type="search"
+                      placeholder="Start typing.. "
+                      onChange={(e) => setQ(e.target.value)}
+                      value={q}
+                    />
+                  </p>
+                  <p className="control">
+                    <input className="button" type="submit" value="Search" />
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      </h3>
+      </div>
+
+      <div className="columns is-multiline">
+        {products.map((product) => {
+          return (
+            <ProductCard
+              key={product._id}
+              brand={product.brand}
+              price={product.price}
+              name={product.name}
+              imageUrl={product.image.url}
+              stockCount={product.stockCount}
+              _id={product._id}
+              onItemSelect={onItemSelect}
+            />
+          )
+        })}
+      </div>
     </>
   )
 }
