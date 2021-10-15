@@ -27,12 +27,11 @@ const NavBar = () => {
 
   return (
     <div className="navbar is-dark">
-      <nav className="navbar-menu is-fullwidth is-dark">
+      <nav className="navbar-menu">
         <div className="container">
-          <div className="navbar-brand is-dark">
-            <img src={logo} alt={logo} className="image is-64x64" />
-            <Link to="/" className="navbar-item">
-              Home
+          <div className="navbar-start is-dark">
+            <Link to="/">
+              <img src={logo} alt={logo} className="image is-64x64" />
             </Link>
             <Link to="/products" className="navbar-item">
               Products

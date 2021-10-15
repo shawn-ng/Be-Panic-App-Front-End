@@ -55,30 +55,28 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <div className="is-flex-direction-row">
-            <div className="columns is-justify-content-center">
-              {products.map((product) => {
-                // ? {product.stockCount < 10} :
-                // return <p>Running Low</p>
-                return product.stockCount < 10 ? (
-                  <HomeCard
-                    key={product._id}
-                    category={product.category}
-                    stockCount="Running low"
-                    _id={product._id}
-                  />
-                ) : (
-                  <HomeCard
-                    key={product._id}
-                    category={product.category}
-                    stockCount={product.stockCount}
-                    _id={product._id}
-                  />
-                )
-              })}
-            </div>
-          </div> */}
         </div>
+        {/* <div>
+          <div className="columns is-multiline">
+            {products.map((product) => {
+              return product.stockCount < 10 ? (
+                <HomeCard
+                  key={product._id}
+                  category={product.category}
+                  stockCount="Running low"
+                  _id={product._id}
+                />
+              ) : (
+                <HomeCard
+                  key={product._id}
+                  category={product.category}
+                  stockCount={product.stockCount}
+                  _id={product._id}
+                />
+              )
+            })}
+          </div>
+        </div> */}
       </section>
     </>
   )

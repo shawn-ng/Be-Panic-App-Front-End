@@ -13,14 +13,16 @@ const ProductCard = ({
   onItemSelect,
 }) => {
   return (
-    <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+    <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile is-vcentered">
       <Link to={`/product/${_id}`}>
         <div className="card">
           <div className="card-header">
-            <h4 className="card-header-title">{name}</h4>
+            {/* <h4 className="card-header-title has-text-centered">{name}</h4> */}
+            <h4 className="card-header-title">
+              {name.length >= 24 ? name.slice(0, 24) + '...' : name}
+            </h4>
           </div>
         </div>
-
         <div className="card-image">
           <figure className="image is-1by1">
             <img
@@ -32,13 +34,11 @@ const ProductCard = ({
             />
           </figure>
         </div>
-
-        <div className="card-content">
-          <h5>{category}</h5>
-          <h5>By {brand}</h5>
+        <div className="notification link-focus-border">
+          {/* <h5 className="is-link">{category}</h5> */}
           <h5>£{price}</h5>
+          {/* <h5>By {brand}</h5> */}
           <h5>{stockCount} Left In Stock</h5>
-          {/* <h5>{_id}</h5> */}
         </div>
       </Link>
       <button
