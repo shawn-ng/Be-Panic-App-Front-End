@@ -38,27 +38,26 @@ const ProductCard = ({
           <h5>£{price}</h5>
 
           <h5>{stockCount} Left In Stock</h5>
-
-          <button
-            className="button is-fullwidth mt-4 is-warning"
-            onClick={() =>
-              onItemSelect({
-                _id,
-                name,
-                brand,
-                imageUrl,
-                price,
-                stockCount,
-                itemDescription,
-                category,
-                onItemSelect,
-              })
-            }
-          >
-            Buy
-          </button>
         </div>
       </Link>
+      <button
+        className="button is-fullwidth mt-4 is-warning"
+        onClick={() =>
+          onItemSelect({
+            _id,
+            name,
+            brand,
+            imageUrl,
+            price,
+            stockCount,
+            itemDescription,
+            category,
+            onItemSelect,
+          })
+        }
+      >
+        Buy
+      </button>
     </div>
   )
 }

@@ -28,7 +28,7 @@ export const searchProducts = async (query) => {
     },
   }
   const { data } = await axios.request(options)
-  console.log('this is the api data log in api.js', data)
+
   return data
 }
 

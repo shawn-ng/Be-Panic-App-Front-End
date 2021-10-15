@@ -10,17 +10,6 @@ const BasketCard = ({
   itemDescription,
   category,
 }) => {
-  console.log({
-    _id,
-    name,
-    brand,
-    imageUrl,
-    price,
-    stockCount,
-    itemDescription,
-    category,
-  })
-
   return (
     <section className="has-background-black">
       <div className="has-background-black">

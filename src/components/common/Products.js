@@ -39,7 +39,6 @@ const Products = ({ onItemSelect }) => {
     getAllProducts().then((products) => setProducts(products))
   }, [])
 
-  console.log(searched)
   return (
     <>
       <div className="section has-background-black">
