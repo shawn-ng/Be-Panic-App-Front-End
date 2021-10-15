@@ -20,22 +20,22 @@ const Basket = ({ basket, onCheckOut }) => {
   const handleCheckOut = (e) => {
     e.preventDefault()
 
-    if (!state) {
-      alert('Basket is empty')
+    if (!window.localStorage.token) {
+      history.push('/login')
+    } else {
+      state.forEach((product) => {
+        let updatedData = {
+          stockCount: product.stockCount - 1,
+        }
+        updatingProductsApi(product._id, updatedData)
+        console.log(product)
+      })
+
+      setState([])
+      onCheckOut()
+
+      history.push('/')
     }
-
-    state.forEach((product) => {
-      let updatedData = {
-        stockCount: product.stockCount - 1,
-      }
-      updatingProductsApi(product._id, updatedData)
-      console.log(product)
-    })
-
-    setState([])
-    onCheckOut()
-
-    history.push('/')
   }
 
   React.useEffect(() => {
