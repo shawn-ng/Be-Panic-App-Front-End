@@ -35,6 +35,7 @@ const Basket = () => {
       setState([])
 
       history.push('/confirmation')
+      window.localStorage.removeItem('basket')
     }
   }
 
