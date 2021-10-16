@@ -40,8 +40,8 @@ const Login = () => {
   }
 
   return (
-    <section>
-      <div>
+    <section className="hero is-fullheight has-background-danger-light">
+      <div className="section">
         <div>
           <form
             onSubmit={handleSubmit}

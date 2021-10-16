@@ -30,9 +30,11 @@ const NavBar = () => {
       <nav className="navbar-menu">
         <div className="container">
           <div className="navbar-start is-dark">
-            <Link to="/">
-              <img src={logo} alt={logo} className="image is-64x64" />
-            </Link>
+            <div className="navbar-brand">
+              <Link to="/">
+                <img src={logo} alt={logo} className="image is-64x64" />
+              </Link>
+            </div>
             <Link to="/products" className="navbar-item">
               Shop Now
             </Link>

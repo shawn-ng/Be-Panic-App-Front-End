@@ -54,7 +54,7 @@ const Products = ({ onItemSelect }) => {
                 <form className="level-item" onSubmit={search}>
                   <p className="control">
                     <input
-                      className="input"
+                      className="input is-rounded"
                       type="search"
                       placeholder="Start typing.. "
                       onChange={(e) => {
@@ -64,7 +64,11 @@ const Products = ({ onItemSelect }) => {
                     />
                   </p>
                   <p className="control">
-                    <input className="button" type="submit" value="Search" />
+                    <input
+                      className="button is-rounded"
+                      type="submit"
+                      value="Search"
+                    />
                   </p>
                 </form>
               </div>

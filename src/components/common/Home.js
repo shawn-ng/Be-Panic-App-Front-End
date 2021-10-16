@@ -27,18 +27,18 @@ const Home = () => {
       <section>
         <div className="hero is-fullheight-with-navbar  bg-img">
           <div className="hero-body">
-            <div className="column">
+            <div className="column is-multiline">
               <div className="mb-6 box-title">
                 <h1 className="title has-text-centered home-title">
                   Welcome to Paniccc Buyers
                 </h1>
               </div>
-              <div className="level-item">
+              <div className="level-item my-5">
                 <div className="field has-addons">
                   <form className="level-item">
                     <div className="control">
                       <input
-                        className="input is-medium"
+                        className="input is-large is-rounded"
                         type="search"
                         placeholder="Start typing.. "
                         onChange={(e) => setQ(e.target.value)}
@@ -47,7 +47,7 @@ const Home = () => {
                     </div>
                     <div className="control">
                       <Link
-                        className="button is-medium"
+                        className="button is-large is-rounded"
                         to={{
                           pathname: '/products',
                           qHome,
@@ -55,16 +55,13 @@ const Home = () => {
                       >
                         Search
                       </Link>
-                      {/* <input
-                        className="button is-medium"
-                        type="submit"
-                        value="Search"
-                      /> */}
                     </div>
                   </form>
-                  {/* <h2>Beat the chumps and getcha haul</h2> */}
                 </div>
               </div>
+              {/* <h2 className="title is-2 has-text-centered has-text-danger-dark">
+                Beat the chumps and getcha haul
+              </h2> */}
             </div>
           </div>
         </div>
