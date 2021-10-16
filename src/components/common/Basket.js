@@ -20,6 +20,9 @@ const Basket = () => {
 
   const handleCheckOut = (e) => {
     e.preventDefault()
+    if (!state) {
+      return alert('Your basket is empty!')
+    }
 
     if (!window.localStorage.token) {
       history.push('/login')
@@ -44,9 +47,12 @@ const Basket = () => {
 
   React.useEffect(() => {
     let sum = 0
-    for (let z = 0; z < state.length; z++) {
-      sum += state[z].price
+    if (state) {
+      for (let z = 0; z < state.length; z++) {
+        sum += state[z].price
+      }
     }
+
     setTotal(sum)
   }, [])
 
@@ -57,18 +63,20 @@ const Basket = () => {
           <h1 className="title mx-5 has-text-danger-dark">Basket</h1>
           <div className="columns">
             <div className="column">
-              {state.map((product) => {
-                return (
-                  <BasketCard
-                    key={`${product._id}_${Math.random() * state.length}`}
-                    brand={product.brand}
-                    price={product.price}
-                    name={product.name}
-                    stockCount={product.stockCount}
-                    _id={product._id}
-                  />
-                )
-              })}
+              {state
+                ? state.map((product) => {
+                    return (
+                      <BasketCard
+                        key={`${product._id}_${Math.random() * state.length}`}
+                        brand={product.brand}
+                        price={product.price}
+                        name={product.name}
+                        stockCount={product.stockCount}
+                        _id={product._id}
+                      />
+                    )
+                  })
+                : null}
             </div>
           </div>
           <hr />
