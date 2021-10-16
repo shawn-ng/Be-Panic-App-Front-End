@@ -55,11 +55,6 @@ const Home = () => {
                       >
                         Search
                       </Link>
-                      {/* <input
-                        className="button is-medium"
-                        type="submit"
-                        value="Search"
-                      /> */}
                     </div>
                   </form>
                   {/* <h2>Beat the chumps and getcha haul</h2> */}
