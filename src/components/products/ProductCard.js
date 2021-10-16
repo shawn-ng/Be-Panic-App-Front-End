@@ -10,8 +10,21 @@ const ProductCard = ({
   stockCount,
   itemDescription,
   category,
-  onItemSelect,
 }) => {
+  const onItemSelect = async (item) => {
+    const items = window.localStorage.getItem('basket')
+    if (items) {
+      const itemsFromJson = await JSON.parse(items)
+      itemsFromJson.push(item)
+      console.log('items', itemsFromJson)
+      return window.localStorage.setItem(
+        'basket',
+        JSON.stringify(itemsFromJson)
+      )
+    }
+    return window.localStorage.setItem('basket', JSON.stringify([item]))
+  }
+
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile is-vcentered">
       <Link to={`/product/${_id}`}>
@@ -41,8 +54,9 @@ const ProductCard = ({
         </div>
       </Link>
       <button
+        type="button"
         className="button is-fullwidth mt-4 is-warning"
-        onClick={() =>
+        onClick={() => {
           onItemSelect({
             _id,
             name,
@@ -52,9 +66,8 @@ const ProductCard = ({
             stockCount,
             itemDescription,
             category,
-            onItemSelect,
           })
-        }
+        }}
       >
         Buy
       </button>

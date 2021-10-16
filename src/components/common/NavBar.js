@@ -30,16 +30,18 @@ const NavBar = () => {
       <nav className="navbar-menu">
         <div className="container">
           <div className="navbar-start is-dark">
-            <Link to="/">
-              <img src={logo} alt={logo} className="image is-64x64" />
-            </Link>
+            <div className="navbar-brand">
+              <Link to="/">
+                <img src={logo} alt={logo} className="image is-64x64" />
+              </Link>
+            </div>
             <Link to="/products" className="navbar-item">
               Shop Now
             </Link>
 
             <div className="navbar-end">
               <Link to="/basket" className="navbar-item">
-                🧺 Basket
+                🧺
               </Link>
               {roleState === 'super admin' && window.localStorage.token ? (
                 <Link to="/superAdmin" className="navbar-item">
@@ -59,7 +61,7 @@ const NavBar = () => {
                   className="navbar-item"
                   onClick={handleClick}
                 >
-                  LogOut
+                  Log Out
                 </Link>
               ) : (
                 <>

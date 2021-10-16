@@ -6,7 +6,7 @@ import { searchProducts } from '../../api/Api'
 import ProductCard from '../products/ProductCard.js'
 // import Search from './Search'
 
-const Products = ({ onItemSelect }) => {
+const Products = () => {
   const location = useLocation()
   const [products, setProducts] = useState([])
   const [searched, setSearched] = useState([])
@@ -49,12 +49,12 @@ const Products = ({ onItemSelect }) => {
             </h4>
           </div>
           <div className="column is-half">
-            <div className="level-item ">
+            <div className="level-item">
               <div className="field has-addons">
                 <form className="level-item" onSubmit={search}>
                   <p className="control">
                     <input
-                      className="input"
+                      className="input is-rounded"
                       type="search"
                       placeholder="Start typing.. "
                       onChange={(e) => {
@@ -64,7 +64,11 @@ const Products = ({ onItemSelect }) => {
                     />
                   </p>
                   <p className="control">
-                    <input className="button" type="submit" value="Search" />
+                    <input
+                      className="button is-rounded"
+                      type="submit"
+                      value="Search"
+                    />
                   </p>
                 </form>
               </div>
@@ -85,7 +89,6 @@ const Products = ({ onItemSelect }) => {
                   imageUrl={product.image.url}
                   stockCount={product.stockCount}
                   _id={product._id}
-                  onItemSelect={onItemSelect}
                 />
               )
             })
@@ -99,7 +102,6 @@ const Products = ({ onItemSelect }) => {
                   imageUrl={product.image.url}
                   stockCount={product.stockCount}
                   _id={product._id}
-                  onItemSelect={onItemSelect}
                 />
               )
             })}

@@ -4,9 +4,10 @@ import { editProduct } from '../../api/Api.js'
 import BasketCard from '../products/BasketCard.js'
 // import ConfirmationPage from './ConfirmationPage.js'
 
-const Basket = ({ basket, onCheckOut }) => {
+const Basket = () => {
   const history = useHistory()
-  const [state, setState] = useState(basket)
+  const basket = window.localStorage.getItem('basket')
+  const [state, setState] = useState(JSON.parse(basket))
   const [total, setTotal] = useState(0)
 
   const updatingProductsApi = async (id, formData) => {
@@ -37,9 +38,9 @@ const Basket = ({ basket, onCheckOut }) => {
       })
 
       setState([])
-      onCheckOut()
 
       history.push('/confirmation')
+      window.localStorage.removeItem('basket')
     }
   }
 
@@ -65,10 +66,8 @@ const Basket = ({ basket, onCheckOut }) => {
                     brand={product.brand}
                     price={product.price}
                     name={product.name}
-                    // imageUrl={product.image.url}
                     stockCount={product.stockCount}
                     _id={product._id}
-                    // onItemSelect={onItemSelect}
                   />
                 )
               })}
