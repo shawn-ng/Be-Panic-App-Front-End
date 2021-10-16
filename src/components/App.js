@@ -12,11 +12,6 @@ import AdminView from '../adminConsole/admin/adminView.js'
 import ConfirmationPage from './common/ConfirmationPage.js'
 import '../styles/style.scss'
 
-// import Navbar from './navbar/Navbar.js'
-// import Products from './products/Products.js'
-// import Basket from './basket/Basket.js'
-// import SingleItem from './SingleItem/SingleItem.js'
-
 function App({ current }) {
   return (
     <BrowserRouter>

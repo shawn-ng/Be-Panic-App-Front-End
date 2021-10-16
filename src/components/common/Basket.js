@@ -24,12 +24,17 @@ const Basket = () => {
     if (!window.localStorage.token) {
       history.push('/login')
     } else {
+      let productCount = {}
       state.forEach((product) => {
-        let updatedData = {
-          stockCount: product.stockCount - 1,
+        if (productCount[product._id]) {
+          productCount[product._id].stockCount--
+        } else {
+          productCount[product._id] = { stockCount: product.stockCount - 1 }
         }
-        updatingProductsApi(product._id, updatedData)
-        console.log(product)
+      })
+
+      Object.keys(productCount).forEach((product) => {
+        updatingProductsApi(product, productCount[product])
       })
 
       setState([])
@@ -57,7 +62,7 @@ const Basket = () => {
               {state.map((product) => {
                 return (
                   <BasketCard
-                    key={product._id}
+                    key={`${product._id}_${Math.random() * state.length}`}
                     brand={product.brand}
                     price={product.price}
                     name={product.name}
@@ -71,7 +76,10 @@ const Basket = () => {
           <hr />
           <div className="column is-offset-9">
             <p className="has-text-danger-dark">
-              Total: {total ? <p>£{total}</p> : null}
+              Total:{' '}
+              {total ? (
+                <strong className="has-text-danger-dark">£{total}</strong>
+              ) : null}
             </p>
           </div>
           <hr />
