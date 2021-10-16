@@ -62,6 +62,7 @@ const Home = () => {
                       /> */}
                     </div>
                   </form>
+                  {/* <h2>Beat the chumps and getcha haul</h2> */}
                 </div>
               </div>
             </div>

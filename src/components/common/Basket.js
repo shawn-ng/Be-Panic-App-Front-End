@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-
 import { editProduct } from '../../api/Api.js'
 import BasketCard from '../products/BasketCard.js'
+// import ConfirmationPage from './ConfirmationPage.js'
 
 const Basket = ({ basket, onCheckOut }) => {
   const history = useHistory()
@@ -34,7 +34,7 @@ const Basket = ({ basket, onCheckOut }) => {
       setState([])
       onCheckOut()
 
-      history.push('/')
+      history.push('/confirmation')
     }
   }
 

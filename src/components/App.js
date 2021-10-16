@@ -9,7 +9,7 @@ import Register from '../auth/Register.js'
 import Login from '../auth/Login.js'
 import SuperAdminView from '../adminConsole/superAdmin/superAdminView.js'
 import AdminView from '../adminConsole/admin/adminView.js'
-
+import ConfirmationPage from './common/ConfirmationPage.js'
 import '../styles/style.scss'
 
 // import Navbar from './navbar/Navbar.js'
@@ -46,6 +46,7 @@ function App({ current }) {
         <Route path="/login" component={Login} />
         <Route path="/superAdmin" component={SuperAdminView} />
         <Route path="/admin" component={AdminView} />
+        <Route path="/confirmation" component={ConfirmationPage} />
       </Switch>
     </BrowserRouter>
   )

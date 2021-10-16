@@ -131,7 +131,7 @@ const Register = () => {
 
             <div className="field">
               <input
-                className="button is-fullwidth is warning"
+                className="button is-fullwidth is-danger"
                 type="submit"
                 value="Register"
               />
