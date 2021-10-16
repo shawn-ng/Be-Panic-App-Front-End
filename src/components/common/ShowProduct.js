@@ -95,6 +95,20 @@ const ShowProduct = () => {
     await getOverallRating()
   }
 
+  const onItemSelect = async (item) => {
+    const items = window.localStorage.getItem('basket')
+    if (items) {
+      const itemsFromJson = await JSON.parse(items)
+      itemsFromJson.push(item)
+
+      return window.localStorage.setItem(
+        'basket',
+        JSON.stringify(itemsFromJson)
+      )
+    }
+    return window.localStorage.setItem('basket', JSON.stringify([item]))
+  }
+
   React.useEffect(() => {
     getSingleProductFromApi()
     if (state) {
@@ -128,6 +142,24 @@ const ShowProduct = () => {
                     <p>{state.product.productInfo}</p>
                     <hr />
                     <p>{state.product.itemDescription}</p>
+                    <hr />
+                    <button
+                      type="button"
+                      className="button is-fullwidth mt-4 is-warning"
+                      onClick={() => {
+                        let item = {
+                          brand: state.product.brand,
+                          imageUrl: state.product.image.url,
+                          name: state.product.name,
+                          price: state.product.price,
+                          stockCount: state.product.stockCount,
+                          _id: state.product._id,
+                        }
+                        onItemSelect(item)
+                      }}
+                    >
+                      Buy
+                    </button>
                     <hr />
                     <button className="button" onClick={handleModal}>
                       Write Review

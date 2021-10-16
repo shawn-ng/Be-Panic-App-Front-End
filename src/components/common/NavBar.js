@@ -43,6 +43,7 @@ const NavBar = () => {
               <Link to="/basket" className="navbar-item">
                 🧺
               </Link>
+
               {roleState === 'super admin' && window.localStorage.token ? (
                 <Link to="/superAdmin" className="navbar-item">
                   Users
