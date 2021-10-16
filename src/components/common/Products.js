@@ -106,9 +106,6 @@ const Products = () => {
               )
             })}
       </div>
-      <div className="content">
-        <footer className="footer"></footer>
-      </div>
     </>
   )
 }
