@@ -37,8 +37,6 @@ const Basket = () => {
         updatingProductsApi(product, productCount[product])
       })
 
-      setState([])
-
       history.push('/confirmation')
       window.localStorage.removeItem('basket')
     }
