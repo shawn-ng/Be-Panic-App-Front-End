@@ -31,6 +31,14 @@ NPM install for the dependencies
 
 ## Where we ended up
 
+we have most of the elements that we wanted to create
+we changed the vision as necessary as our vision for the project continued.
+for example:
+
+- we removed the product on the home page in favour of having a central search bar that would take you directly to the product you need
+- we don't the filtering section of the product page due to having to remove redux
+- there is no message to mention that the search returns no result in the product page
+
 ## Screenshots and Wireframes
 
 ## Highlights
