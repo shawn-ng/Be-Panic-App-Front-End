@@ -1,5 +1,81 @@
 # Be-Panic-App-Front-End
 
+## Original Intent
+
+To create a e-commerce shop focused on panic-buying.
+
+## MVP
+
+- working database
+- working api with all crud operations
+- models for products, reviews, users1
+- displaying items on the home page
+- basket
+- authentication
+
+## Bonus
+
+- sending out emails
+- admin and super admin consoles for controlling products and user access
+- intake form for address and payment details
+- buttons for removing and adding items in the basket page
+- search function
+- filtering on product page
+- having buyer and seller access to the page
+
+## Running the apps
+
+we used react to build the app and to test the front-end we used the script 'npm run start:client' and for the back-end we used 'npm start dev'
+
+NPM install for the dependencies
+
+## Where we ended up
+
+we have most of the elements that we wanted to create
+we changed the vision as necessary as our vision for the project continued.
+for example:
+
+- we removed the product on the home page in favour of having a central search bar that would take you directly to the product you need
+- we don't the filtering section of the product page due to having to remove redux
+- there is no message to mention that the search returns no result in the product page
+
+## Screenshots and Wireframes
+
+## Highlights
+
+Building a functioning fullstack app
+Fun idea for the project
+Getting the api and database working
+using a Kanban board to manage the project and sharing out tasks
+being close to a full ecommerce shop that could take orders
+using figma as a wireframing tool to create a vision of a final result.
+
+## Struggles
+
+- linking the frontend to the back end
+- webpack configurations, having to change versions
+- getting to use the email handler when called in the API
+- using redux and having to take it out of the project
+- issues with model: hard to make a reusable model for forms and reviews making code very long
+- getting the basket items to get removed in the api
+
+## What we would like to add to the project
+
+- basket displaying when empty
+- footer with details
+- toastify library for animations
+- more developed emails that are tailored to the user and display the products that were purchased
+- storing addresses of users
+- linking to payment api?
+
+## What we learnt
+
+- building up an app from the ground up
+- linking the front and back end
+- don't mix technologies before understanding how they fit together
+
+## Would we recommend trying this?
+
 ## Developing the idea
 
 - idea for an e-commerce shop
