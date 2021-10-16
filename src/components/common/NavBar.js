@@ -39,7 +39,7 @@ const NavBar = () => {
 
             <div className="navbar-end">
               <Link to="/basket" className="navbar-item">
-                🧺 Basket
+                🧺
               </Link>
               {roleState === 'super admin' && window.localStorage.token ? (
                 <Link to="/superAdmin" className="navbar-item">
@@ -59,7 +59,7 @@ const NavBar = () => {
                   className="navbar-item"
                   onClick={handleClick}
                 >
-                  LogOut
+                  Log Out
                 </Link>
               ) : (
                 <>

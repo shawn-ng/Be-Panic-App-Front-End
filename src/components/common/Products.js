@@ -49,7 +49,7 @@ const Products = ({ onItemSelect }) => {
             </h4>
           </div>
           <div className="column is-half">
-            <div className="level-item ">
+            <div className="level-item">
               <div className="field has-addons">
                 <form className="level-item" onSubmit={search}>
                   <p className="control">
@@ -103,6 +103,9 @@ const Products = ({ onItemSelect }) => {
                 />
               )
             })}
+      </div>
+      <div className="content">
+        <footer className="footer"></footer>
       </div>
     </>
   )
