@@ -13,8 +13,8 @@ const ConfirmationPage = () => {
   }
 
   return (
-    <section className="hero is-fullheight has-background-danger-light">
-      <div className="columns">
+    <section className="hero is-fullheight has-background-danger-light level">
+      <div className="columns has-text-centered level-item">
         <div className="column is-half mx-6">
           <div className="content is-large">
             <h2 className="title mt-6">Confirmation, order placed.</h2>
@@ -39,6 +39,14 @@ const ConfirmationPage = () => {
             <img src="https://c.tenor.com/JnykKYGfjBUAAAAC/waiting-lady.gif"></img>
           </figure>
         </div>
+      </div>
+      <div className="content has-text-centered">
+        <footer className="footer has-background-danger-light">
+          <img
+            src="https://i.imgur.com/kD5lVAS.jpg"
+            alt="App Download Link"
+          ></img>
+        </footer>
       </div>
     </section>
   )
