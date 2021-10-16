@@ -18,30 +18,14 @@ import '../styles/style.scss'
 // import SingleItem from './SingleItem/SingleItem.js'
 
 function App({ current }) {
-  const [basket, setBasket] = React.useState([])
-
-  const handleBasketItemSelect = (item) => setBasket([...basket, item])
-
-  const onCheckOut = () => setBasket([])
-
   return (
     <BrowserRouter>
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route
-          path="/products"
-          component={(props) => (
-            <Products {...props} onItemSelect={handleBasketItemSelect} />
-          )}
-        />
+        <Route path="/products" component={Products} />
         <Route path="/product/:id" component={ShowProduct} />
-        <Route
-          path="/basket"
-          component={(props) => (
-            <Basket {...props} basket={basket} onCheckOut={onCheckOut} />
-          )}
-        />
+        <Route path="/basket" component={Basket} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/superAdmin" component={SuperAdminView} />

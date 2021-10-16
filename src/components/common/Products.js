@@ -6,7 +6,7 @@ import { searchProducts } from '../../api/Api'
 import ProductCard from '../products/ProductCard.js'
 // import Search from './Search'
 
-const Products = ({ onItemSelect }) => {
+const Products = () => {
   const location = useLocation()
   const [products, setProducts] = useState([])
   const [searched, setSearched] = useState([])
@@ -89,7 +89,6 @@ const Products = ({ onItemSelect }) => {
                   imageUrl={product.image.url}
                   stockCount={product.stockCount}
                   _id={product._id}
-                  onItemSelect={onItemSelect}
                 />
               )
             })
@@ -103,7 +102,6 @@ const Products = ({ onItemSelect }) => {
                   imageUrl={product.image.url}
                   stockCount={product.stockCount}
                   _id={product._id}
-                  onItemSelect={onItemSelect}
                 />
               )
             })}
