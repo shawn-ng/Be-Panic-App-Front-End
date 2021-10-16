@@ -40,6 +40,14 @@ const ConfirmationPage = () => {
           </figure>
         </div>
       </div>
+      <div className="content has-text-centered">
+        <footer className="footer has-background-danger-light">
+          <img
+            src="https://i.imgur.com/kD5lVAS.jpg"
+            alt="App Download Link"
+          ></img>
+        </footer>
+      </div>
     </section>
   )
 }
