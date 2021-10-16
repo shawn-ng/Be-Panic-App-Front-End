@@ -8,7 +8,7 @@ To create a e-commerce shop focused on panic-buying.
 
 - working database
 - working api with all crud operations
-- models for products, reviews, users1
+- models for products, reviews, users
 - displaying items on the home page
 - basket
 - authentication
@@ -27,7 +27,7 @@ To create a e-commerce shop focused on panic-buying.
 
 we used react to build the app and to test the front-end we used the script 'npm run start:client' and for the back-end we used 'npm start dev'
 
-NPM install for the dependencies
+npm install for the dependencies
 
 ## Where we ended up
 
@@ -36,28 +36,51 @@ we changed the vision as necessary as our vision for the project continued.
 for example:
 
 - we removed the product on the home page in favour of having a central search bar that would take you directly to the product you need
-- we don't the filtering section of the product page due to having to remove redux
+- we don't have the filtering section of the product page due to having to remove redux
 - there is no message to mention that the search returns no result in the product page
 
 ## Screenshots and Wireframes
 
+![alt text](https://user-images.githubusercontent.com/64632596/137585118-de0ee6ad-acb8-4ed3-837f-20197b5ee2ce.png 'Wireframe Home')
+
+![alt text](https://user-images.githubusercontent.com/64632596/137585393-15cc645b-a9b6-4fe1-b619-7b8fd67c8078.png 'Wireframe Product Page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585446-9342b2ef-b92b-46c3-8cf6-d2492c6f953b.png 'Wireframe Single Product Page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585510-7a355b97-b1a4-4828-ba3e-f93d8abe5f7f.png 'Wireframe Register Page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585530-8412e219-dfa8-42df-bb74-b0e079782cdf.png 'Wireframe Login Page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585562-e4cd87d2-4a5d-4cc4-9b96-cefecb4f50be.png 'Wireframe Search Not Found')
+![alt text](https://user-images.githubusercontent.com/64632596/137585585-9d1631df-1d3b-4b7e-844a-fc2e62577688.png 'Wireframe Admin Product Console')
+![alt text](https://user-images.githubusercontent.com/64632596/137585612-5534fbd5-8624-4b94-ad01-f01dc5ba7721.png 'Wireframe User Management Console')
+![alt text](https://user-images.githubusercontent.com/64632596/137585640-d54448cd-2dce-4ee5-a034-737f08e07521.png 'Wireframe Basket Page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585668-827f48b0-590b-490d-8a59-559ef4ea2acd.png 'Wireframe Address page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585683-6b23b61b-2313-4074-af09-7c3023efd4d5.png 'Wireframe Payment Page')
+![alt text](https://user-images.githubusercontent.com/64632596/137585704-981d80cd-28eb-4b07-8d44-5e70de1e8418.png 'Wireframe Confirmation Page')
+
 ## Highlights
 
-Building a functioning fullstack app
-Fun idea for the project
-Getting the api and database working
-using a Kanban board to manage the project and sharing out tasks
-being close to a full ecommerce shop that could take orders
-using figma as a wireframing tool to create a vision of a final result.
+- Building a functioning fullstack app
+- Fun idea for the project
+- Getting the api and database working
+- using a Kanban board to manage the project and sharing out tasks
+- being close to a full ecommerce shop that could take orders
+- using figma as a wireframing tool to create a vision of a final result.
 
 ## Struggles
 
 - linking the frontend to the back end
 - webpack configurations, having to change versions
 - getting to use the email handler when called in the API
-- using redux and having to take it out of the project
 - issues with model: hard to make a reusable model for forms and reviews making code very long
 - getting the basket items to get removed in the api
+- Animated Basket:
+
+  With our initial idea we wanted to display the typical Ecommerce basket, along with the basket item total number inside of the NavBar. Through brainstorming we narrowed down to the idea of using ’Toastify’ notifications or ‘Redux’; finally settling on Redux. The learnings from this meant that we were able to display the following:
+
+  - A product page in gallery form - this had a ‘Buy Now’ button for shoppers who know what they want
+  - Individual product pages - which showed all of the details present in the product schema, along with an ‘Add to Basket’ button
+  - An animated icon in the NavBar - that displayed the number of selected items next to the basket
+  - A basket page - which listed the selected items, allowed customers to edit the qty and remove items from their basket selection. This page also displayed the total basket value amount, and had a ‘Proceed to Checkout’ button
+
+  Once this was complete, we attempted to integrate the components with the rest of the app to link to the API. This is where the struggles began, and we soon learnt that it is better to do either or, rather than a hybrid of ‘React’ & ‘Redux’. As the initial solution was to “Reduxify” the rest of our app, we ended up scrapping the ‘Redux’ components and starting to build the basket process again from scratch.
 
 ## What we would like to add to the project
 
