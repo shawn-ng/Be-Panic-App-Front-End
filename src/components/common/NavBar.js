@@ -34,7 +34,7 @@ const NavBar = () => {
               <img src={logo} alt={logo} className="image is-64x64" />
             </Link>
             <Link to="/products" className="navbar-item">
-              Products
+              Shop Now
             </Link>
 
             <div className="navbar-end">
