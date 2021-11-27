@@ -1,5 +1,7 @@
 # Be-Panic-App-Front-End
 
+## Project Brief
+
 ## Original Intent
 
 To create a e-commerce shop focused on panic-buying.
@@ -57,7 +59,7 @@ for example:
 
 ## Highlights
 
-- Building a functioning fullstack app
+- Building a functioning fullstack app with Node and Express
 - Fun idea for the project
 - Getting the api and database working
 - using a Kanban board to manage the project and sharing out tasks
@@ -96,28 +98,30 @@ for example:
 - building up an app from the ground up
 - linking the front and back end
 - don't mix technologies before understanding how they fit together
+  - we tried to use Redux before fully understanding how to implement it and ended up not being able to use in the final project
 
 ## Would we recommend trying this?
 
+Yes, it was a fun project in which collaborated well, pair-programmed, and used git to executed on a vision and achieved a result we're proud of.
+
 ## Developing the idea
 
-- idea for an e-commerce shop
-- brainstorm types of products
-- decided on panic buying shop
-- wire-frame design to get idea of all desired features
-- set up kanban for initial steps to get the process of the ground and sharing tasks
-- kanban as source for links to resources used for the project: step by step files, links to repos (front + back end repos), wire-frame project, postman api collection.
+- we started with the idea for an e-commerce shop
+- brainstormed types of products we would like to sell
+- decided on panic buying shop (date at time of start of project 2nd October 2021, UK fuel shortages, etc)
+- We wire-framed the design to get idea of all desired features in Figma
+- set up a kanban for initial steps in Trello to get the process of the ground and sharing and assign tasks
+- We used the kanban as source for links to resources used for the project: step by step files, links to repos (front + back end repos), wire-frame project, postman api collection.
 
 ## Feature list
 
 Home:
 
-- products listed with stock count and running out if < 10 in count
-- register / login
-- search bar for products - have search bar appear on all pages
+- We created a function for products listed with stock count and running out if < 10 in count
+- Search bar for products and have search bar appear on all pages
 - register page
 - login page: users can only checkout if logged in
-- store address details in db, but NOT PAYMENT DETAILS. In real world would be payment API.
+- we had the idea of storing addresses details in db, but NOT PAYMENT DETAILS. In real world would be payment API.
 
 Product page:
 
@@ -163,7 +167,7 @@ Payments page:
 
 ## Steps to build the back end
 
-- set up files: package.json, dependencies, git repo, gitignore, index.js, webpack, index.html, styles, .prettierrc.
+- set up files: package.json, dependencies, git repo, gitignore, index.js, webpack, index.html, styles, .prettierrc
 - create components
 - create api
 - test that api returns data
