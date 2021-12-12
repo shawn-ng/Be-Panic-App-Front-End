@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { getAllProducts } from '../../api/Api'
-import { searchProducts } from '../../api/Api'
+import { Products } from '../../api/Api'
 import ProductCard from '../products/ProductCard.js'
 // import Search from './Search'
 
@@ -56,7 +56,7 @@ const Products = () => {
                     <input
                       className="input is-rounded"
                       type="search"
-                      placeholder="Start typing.. "
+                      placeholder="Start typing 555.. "
                       onChange={(e) => {
                         setQ(e.target.value)
                       }}
