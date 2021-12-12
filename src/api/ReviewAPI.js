@@ -1,6 +1,6 @@
 import axios from 'axios'
-
 import { getToken } from './Auth.js'
+import request from './Request.js'
 
 export const createReview = (id, reviewData) => {
   return axios.post(`/api/product/${id}/review`, reviewData, {

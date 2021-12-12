@@ -69,7 +69,7 @@ const ShowProduct = () => {
     await createReview(id, reviewText.review)
 
     getSingleProductFromApi()
-    await getOverallRating()
+    // await getOverallRating()
 
     setReview({
       review: {
@@ -111,9 +111,9 @@ const ShowProduct = () => {
 
   React.useEffect(() => {
     getSingleProductFromApi()
-    if (state) {
-      getOverallRating()
-    }
+    // if (state) {
+    //   getOverallRating()
+    // }
   }, [])
 
   return (
